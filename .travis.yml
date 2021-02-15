@@ -23,4 +23,4 @@ script:
 
 - sfdx force:source:convert -d deploy_prod -r force-app 
 
-- sfdx force:mdapi:deploy -u HubOrg -d deploy_prod/ -w -1 -l RunAllTestsInOrg
+- sfdx force:mdapi:deploy -u HubOrg -d deploy_prod
