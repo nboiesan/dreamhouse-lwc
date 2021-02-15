@@ -21,11 +21,11 @@ before_install:
   --username $USERNAME --setdefaultdevhubusername -a HubOrg
 
 script:
-if [ $TRAVIS_BRANCH == "feature" ]; then 
+- if [ $TRAVIS_BRANCH == "feature" ]; then 
 - sfdx force:source:deploy -c -u HubOrg -p force-app -w -1 -l RunAllTestsInOrg; 
 fi
 
-if [ $TRAVIS_BRANCH == "master" ]; then 
+- if [ $TRAVIS_BRANCH == "master" ]; then 
 - sfdx force:source:deploy -u HubOrg -p force-app; 
 fi
 
