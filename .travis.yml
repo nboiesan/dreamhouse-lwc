@@ -20,5 +20,7 @@ before_install:
 - sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile ./assets/server.key
   --username $USERNAME --setdefaultdevhubusername -a HubOrg
 script:
-
+if: branch = feature
+- sfdx force:source:deploy -c -u HubOrg -p force-app -w -1 -l RunAllTestsInOrg
+if: branch = master
 - sfdx force:source:deploy -u HubOrg -p force-app
